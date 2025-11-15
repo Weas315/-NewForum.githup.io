@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Forum - Gönderiler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+</head>
+<body>
+    <header>
+        <h1>New Forum</h1>
+        <p>Hoş geldin! Genel akışa gönderi at!</p>
+        <h2 id="totalPosts">Toplam gönderilen mesaj: 0</h2>
+        
+        <button id="themeToggle" style="
+            position: absolute; 
+            top: 15px; 
+            right: 20px; 
+            padding: 8px 15px; 
+            border-radius: 20px;
+            border: none;
+            background-color: #f0f0f0; 
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        ">Karanlık Moda Geç</button>
+    </header>
+
+    <div class="content-wrapper">
+        
+        <main>
+            
+            <section class="new-post">
+                <h2>Gönderi At</h2>
+                <form id="postForm">
+                    <input type="text" id="username" placeholder="Kullanıcı adı" required>
+                    <textarea id="message" placeholder="Mesajını yaz..." required></textarea>
+                    <button type="submit">Gönder</button>
+                </form>
+            </section>
+            
+            <section class="posts">
+                <h2>Genel Gönderi Akışı</h2>
+                <div id="postList">
+                    </div>
+            </section>
+
+        </main>
+        
+        <aside class="signup-container">
+            <h2>Hemen Kaydol!</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="regUsername">Kullanıcı Adı</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">E-posta</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Şifre</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <button type="submit" class="signup-btn">Kaydol ve Kurucu Ol!</button>
+            </form>
+            <p id="signup-message" class="hidden"></p>
+        </aside>
+
+    </div> 
+
+    <footer>
+        <p>© 2025 New Forum</p>
+    </footer>
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeProfileModal()">&times;</span>
+            <h2 id="modalUsername"></h2>
+            <div id="modalProfileStats">
+                <p><strong>Rozetler:</strong> <span id="statBadges"></span></p> 
+                <p><strong>Rütbe:</strong> <span id="statRank"></span></p>
+                <p><strong>Mesaj Sayısı:</strong> <span id="statPosts"></span></p>
+                <p><strong>Toplam Beğeni:</strong> <span id="statLikes"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
